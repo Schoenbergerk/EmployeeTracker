@@ -1,4 +1,4 @@
-INSERT INTO departments (department_name)
+INSERT INTO departments (departments_name)
 VALUES
 ('Finance')
 ('Human Resources')
@@ -6,9 +6,9 @@ VALUES
 ('Management')
 ('Marketing')
 
-INSERT INTO roles (title, salary, department_id)
+INSERT INTO role (title, salary, departments_id)
 VALUES
-('Accountant Lead', 100000, 1),
+('Accountant Lead', 100000.00, 1),
 ('Accountant Intermediate', 50000, 1),
 ('Human Resources Lead', 25000, 2),
 ('Assistant to the Regional Manager', 100000, 3),

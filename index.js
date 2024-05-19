@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "rootroot",
-    database: "employeeTrackerdb",
+    database: "employeeTracker_db",
 });
 
 connection.connect((err) => {
@@ -69,3 +69,12 @@ function viewAllDepartments() {
         initialize();
     })
 };
+
+function viewAllRoles() {
+    const query = "Select roles.title, role.id, departments.department_name, roles.salary from roles join departments on roles.department_id = departments.id";
+    connection.query(query, (err, res) => {
+        if (err) throw err;
+        console.table(res);
+        initialize();
+    })
+}

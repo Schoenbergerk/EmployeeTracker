@@ -13,8 +13,8 @@ CREATE TABLE roles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30),
     salary DECIMAL(10, 2),
-    FOREIGN KEY (department_id),
-    REFERENCES departments (id),
+    department_id INT,
+    FOREIGN KEY (department_id)    REFERENCES departments (id)
 );
 
 CREATE TABLE employees (
@@ -23,6 +23,6 @@ CREATE TABLE employees (
     last_name VARCHAR(30) NOT NULL,
     role_id INT,
     manager_id INT,
-    Foreign Key (role_id) REFERENCES role (id),
-    Foreign Key (manager_id) REFERENCES employee (id),
+    Foreign Key (role_id) REFERENCES roles (id),
+    Foreign Key (manager_id) REFERENCES employees (id)
 )
